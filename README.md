@@ -16,5 +16,5 @@ A review activity for the intro full stack course
 - [ ] Use localStorage to store votes between page visits
 
 ## Bonus Task
-- [ ] Add another button for getting the favorite pet and alerting the user
-- [ ] Style the favorite pet's section so they stand out
+- [ ] Add another button for calculating the favorite pet
+- [ ] Style the favorite pet's section so they stand out, when button is clicked
