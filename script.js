@@ -79,7 +79,6 @@ favoriteButton.addEventListener('click', function() {
 
     //reset all animals so we don't have two favorites
     for (let index = 0; index < animals.length; index++) {
-        console.log(animals[index])
         animals[index].style.backgroundColor = "white"
         
     }
