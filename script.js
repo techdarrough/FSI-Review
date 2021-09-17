@@ -53,3 +53,39 @@ fishVoteBtn.addEventListener('click', function(e) {
     localStorage.setItem('fish-votes',fishVotesCount)
 });
 animals[2].append(fishVoteBtn)
+
+//calculate favorite votes when clicked
+let votingContainer = document.querySelector("#voting-container");
+let favoriteButton = document.createElement("button");
+favoriteButton.textContent = "Get Favorite Pet"
+favoriteButton.addEventListener('click', function() {
+    //which votes has most?
+    let dVotes = parseInt(dogVotesTd.textContent)
+    let cVotes = parseInt(catVotesTd.textContent)
+    let fVotes = parseInt(fishVotesTd.textContent)
+    let votes = [
+        {id: 'doggo', votes: dVotes}, 
+        {id: 'catto', votes: cVotes}, 
+        {id: 'fish', votes: fVotes}
+    ]
+    //compare them, start at dog votes
+    let highestVotes = votes[0]
+    for (let index = 0; index < votes.length; index++) {
+        if(votes[index].votes > highestVotes.votes){
+            highestVotes = votes[index]
+        }
+        
+    }
+
+    //reset all animals so we don't have two favorites
+    for (let index = 0; index < animals.length; index++) {
+        console.log(animals[index])
+        animals[index].style.backgroundColor = "white"
+        
+    }
+
+    //add favorite class to pet's section
+    let favoriteAnimal = document.querySelector("#"+highestVotes.id)
+    favoriteAnimal.style.backgroundColor = "yellow"
+})
+votingContainer.append(favoriteButton)
