@@ -5,7 +5,7 @@ let voteTableCell1 = document.querySelector('#catto-votes');
 let voteTableCell2 = document.querySelector('#fish-votes');
 
 
-//count vars here
+//Set local storage to handle null and pull previous value
 if(localStorage.getItem('petVote0') === null){
     var petVote0 = 0;
 } else {
@@ -28,6 +28,7 @@ if(localStorage.getItem('petVote2') === null){
 }
 
 // create button add text and style to button
+// selector to compare lenght against
 let petContainers = document.querySelectorAll('.animal');
 
  for(let i =0; i < petContainers.length; i++){
@@ -80,4 +81,18 @@ button_2.addEventListener("click", function(){
   })
 
 //
-let favPetButton = document
+let favoritePet = document.querySelector('#voting-container')
+for(i =0; i < favoritePet.lenght; i++){
+
+    let button = document.createElement('button')
+    let className = 'favoritePet' 
+    button.setAttribute('class', className)
+    button.textContent('Highlight Favorite Pet')
+    button.style.fontSize = '20px'
+    button.style.margin = '10px'
+    button.style.alignSelf(screenLeft)
+    favoritePet.append(button)
+
+
+}
+    
