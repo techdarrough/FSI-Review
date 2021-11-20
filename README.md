@@ -2,8 +2,8 @@
 A review activity for the intro full stack course
 
 # Instructions
-- Fork this project to your GitHub
-- Clone your forked copy locally
+- Fork this project to your GitHub X
+- Clone your forked copy locally X
 - Complete the tasks listed below locally
 - Track your files with git and push to your repo
 
