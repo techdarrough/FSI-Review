@@ -80,19 +80,34 @@ button_2.addEventListener("click", function(){
     
   })
 
-//
+// set location var for button
 let favoritePet = document.querySelector('#voting-container')
-for(i =0; i < favoritePet.lenght; i++){
+//for(i =0; i < favoritePet.lenght; i++){
 
-    let button = document.createElement('button')
-    let className = 'favoritePet' 
-    button.setAttribute('class', className)
-    button.textContent('Highlight Favorite Pet')
-    button.style.fontSize = '20px'
-    button.style.margin = '10px'
-    button.style.alignSelf(screenLeft)
-    favoritePet.append(button)
+    let fbutton = document.createElement('button')
+    let fclassName = 'favoritePet' 
+    fbutton.setAttribute('class', fclassName)
+    fbutton.textContent = 'Highlight Favorite Pet'
+    fbutton.style.fontSize = '20px'
+    fbutton.style.margin = '10px'
+    fbutton.style.alignSelf = screenLeft
+    favoritePet.append(fbutton)
 
 
-}
+//set var for new button selecting by newly created class 
+let hlFavPet = document.querySelector('.favoritePet')
+
+hlFavPet.addEventListener('click', function(){
     
+    if(petVote0 >= petVote1 && petVote0 >= petVote2){
+        // console.log('doggo wins')
+        document.querySelector('.doggo').background-color('yellow')
+
+    } else if (petVote1 >= petVote0 && petVote1 >= petVote2){
+        console.log('cat wins')
+
+    } else if (petVote2 >= petVote0 && petVote2 >= petVote1){
+        console.log('fish wins boo')
+
+    }
+})
