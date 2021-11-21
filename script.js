@@ -3,6 +3,9 @@
 let voteTableCell0 = document.querySelector('#doggo-votes');
 let voteTableCell1 = document.querySelector('#catto-votes');
 let voteTableCell2 = document.querySelector('#fish-votes');
+let doggoWins = document.querySelector('#doggo')
+let cattoWins = document.querySelector('#catto')
+let fishWins = document.querySelector('#fish')
 
 
 //Set local storage to handle null and pull previous value
@@ -98,16 +101,29 @@ let favoritePet = document.querySelector('#voting-container')
 let hlFavPet = document.querySelector('.favoritePet')
 
 hlFavPet.addEventListener('click', function(){
+//remove background color
+    if(doggoWins.style.background = 'yellow') {
+        doggoWins.style.background = 'white'
+        console.log('dog background removed')
+
+    } else  if (cattoWins.style.background = 'yellow') {
+        cattoWins.style.background = 'white'
+        console.log('cat background removed')
+
+    } else if (fishWins.style.background = 'yellow') {
+        fishWins.style.background = 'white'
+        console.log('fish background removed')
+    }
     
-    if(petVote0 >= petVote1 && petVote0 >= petVote2){
+    if(petVote0 > petVote1 && petVote0 > petVote2){
         // console.log('doggo wins')
-        document.querySelector('.doggo').background-color('yellow')
+        doggoWins.style.background = 'yellow'
 
-    } else if (petVote1 >= petVote0 && petVote1 >= petVote2){
-        console.log('cat wins')
+    } else if (petVote1 > petVote0 && petVote1 > petVote2){
+        cattoWins.style.background = 'yellow'
 
-    } else if (petVote2 >= petVote0 && petVote2 >= petVote1){
-        console.log('fish wins boo')
+    } else if (petVote2 > petVote0 && petVote2 > petVote1){
+        fishWins.style.background = 'yellow'
 
     }
 })
